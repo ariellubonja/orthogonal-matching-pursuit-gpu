@@ -4,8 +4,8 @@ import numpy as np
 
 extensions = [
     Extension(
-        "batched_omp.blas_kernels._kernels",
-        ["src/batched_omp/blas_kernels/_kernels.pyx"],
+        "orthogonal_matching_pursuit_gpu.blas_kernels._kernels",
+        ["src/orthogonal_matching_pursuit_gpu/blas_kernels/_kernels.pyx"],
         include_dirs=[np.get_include()],
     )
 ]

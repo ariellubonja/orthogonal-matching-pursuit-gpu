@@ -7,4 +7,4 @@
 .claude
 
 *.so
-src/batched_omp/blas_kernels/_kernels.c
+src/orthogonal_matching_pursuit_gpu/blas_kernels/_kernels.c

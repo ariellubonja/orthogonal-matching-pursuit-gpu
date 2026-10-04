@@ -69,7 +69,7 @@ Tensor of shape (n_samples, n_components) — dense sparse coefficient matrix.
 ### Examples
 
 ```python
-from batched_omp import run_omp
+from orthogonal_matching_pursuit_gpu import run_omp
 import torch
 
 # CPU with tensors
@@ -91,7 +91,7 @@ coefs = run_omp(X_numpy, y_numpy, n_nonzero_coefs=32)
 Drop-in replacement for sklearn.linear_model.OrthogonalMatchingPursuit. Works with Pipeline, GridSearchCV, cross_val_score.
 
 ```python
-from batched_omp import BatchedOrthogonalMatchingPursuit
+from orthogonal_matching_pursuit_gpu import BatchedOrthogonalMatchingPursuit
 
 omp = BatchedOrthogonalMatchingPursuit(
     n_nonzero_coefs=None,   # Default: max(int(0.1 * n_features), 1)
@@ -120,7 +120,7 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 omp = OrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
 # After (orthogonal-matching-pursuit-gpu, automatic GPU):
-from batched_omp import BatchedOrthogonalMatchingPursuit
+from orthogonal_matching_pursuit_gpu import BatchedOrthogonalMatchingPursuit
 omp = BatchedOrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
 # Same API

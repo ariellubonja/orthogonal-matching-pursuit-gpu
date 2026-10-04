@@ -14,7 +14,7 @@ pytest tests/ -v -k gpu        # GPU tests only (need CUDA)
 ## Project structure
 
 ```
-src/batched_omp/                — pip-installable library (no sklearn dependency in core)
+src/orthogonal_matching_pursuit_gpu/                — pip-installable library (no sklearn dependency in core)
     __init__.py                 — public API: run_omp, omp_v0, omp_v0_blas, BatchedOrthogonalMatchingPursuit
     omp.py                      — run_omp, omp_naive, omp_v0, omp_v0_blas
     sklearn_compat.py           — BatchedOrthogonalMatchingPursuit (drop-in sklearn replacement)

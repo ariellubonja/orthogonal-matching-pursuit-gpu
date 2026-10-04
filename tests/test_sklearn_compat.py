@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 
-from batched_omp import BatchedOrthogonalMatchingPursuit
+from orthogonal_matching_pursuit_gpu import BatchedOrthogonalMatchingPursuit
 
 
 # ---------------------------------------------------------------------------

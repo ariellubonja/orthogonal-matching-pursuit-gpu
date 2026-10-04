@@ -46,7 +46,7 @@ pip install -e ".[dev]"
 ## Quick Start
 
 ```python
-from batched_omp import run_omp
+from orthogonal_matching_pursuit_gpu import run_omp
 import torch
 
 # Dictionary X: (n_features, n_components), signals y: (n_samples, n_features)
@@ -82,7 +82,7 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 omp = OrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
 # After (orthogonal-matching-pursuit-gpu, automatic GPU):
-from batched_omp import BatchedOrthogonalMatchingPursuit
+from orthogonal_matching_pursuit_gpu import BatchedOrthogonalMatchingPursuit
 omp = BatchedOrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
 # Same API
@@ -125,7 +125,7 @@ All algorithms are **batched** — they solve B sparse coding problems in parall
 ## Project Structure
 
 ```
-src/batched_omp/           — the library (torch + numpy + scipy, no sklearn)
+src/orthogonal_matching_pursuit_gpu/           — the library (torch + numpy + scipy, no sklearn)
     omp.py                 — run_omp, omp_naive, omp_v0, omp_v0_blas
     utils.py               — batch_mm, innerp, cholesky_solve, elapsed_timer
     blas_kernels/           — Cython BLAS wrappers (daxpy, dgemv, dppsv, idamax)
