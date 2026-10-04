@@ -1,4 +1,4 @@
-# batched-omp
+# orthogonal-matching-pursuit-gpu
 
 > GPU-accelerated Batched Orthogonal Matching Pursuit (OMP) for Python.
 > Up to 310x faster than scikit-learn, 26x faster than SPAMS (C++).

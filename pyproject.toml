@@ -3,8 +3,8 @@ requires = ["setuptools>=64", "Cython>=3.0", "numpy>=1.21", "scipy>=1.7"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "batched-omp"
-version = "0.1.2"
+name = "orthogonal-matching-pursuit-gpu"
+version = "0.1.3"
 description = "GPU-accelerated Batched Orthogonal Matching Pursuit — up to 310x faster than scikit-learn"
 readme = "README.md"
 requires-python = ">=3.10"

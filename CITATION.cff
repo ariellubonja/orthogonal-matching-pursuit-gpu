@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite our paper."
-title: "batched-omp"
+title: "orthogonal-matching-pursuit-gpu"
 type: software
 license: BSD-3-Clause
 url: "https://github.com/ariellubonja/orthogonal-matching-pursuit-gpu"

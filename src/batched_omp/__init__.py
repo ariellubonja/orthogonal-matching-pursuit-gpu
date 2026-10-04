@@ -1,4 +1,4 @@
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 from .omp import run_omp, omp_v0, omp_v0_blas
 

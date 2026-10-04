@@ -21,9 +21,9 @@ Batched implementation of Orthogonal Matching Pursuit (OMP) using BLAS (CPU) and
 
 **There is no other production-ready GPU implementation of OMP.** Existing alternatives either crash on overcomplete dictionaries (cr-sparse) or are CPU-only (sklearn, SPAMS). Batched OMP is the fastest OMP implementation available when you have a GPU.
 
-### When to use batched-omp
+### When to use orthogonal-matching-pursuit-gpu
 
-- **Have a GPU?** Use batched-omp — there is nothing faster. **12-26x faster than SPAMS** (C++) across all realistic configs
+- **Have a GPU?** Use orthogonal-matching-pursuit-gpu — there is nothing faster. **12-26x faster than SPAMS** (C++) across all realistic configs
 - **CPU only, want a sklearn drop-in?** 4-5x faster, same API, no C dependencies
 - **CPU only, maximum speed?** [SPAMS](https://thoth.inrialpes.fr/people/mairal/spams/) is faster (C++ with OpenMP) but harder to install and requires Python ≤3.11 (depends on deprecated `numpy.distutils`)
 - **Few signals or small problems?** sklearn is fine — batching helps most with hundreds+ of signals
@@ -31,12 +31,12 @@ Batched implementation of Orthogonal Matching Pursuit (OMP) using BLAS (CPU) and
 ## Installation
 
 ```bash
-pip install batched-omp
+pip install orthogonal-matching-pursuit-gpu
 ```
 
 Requires Python 3.10+ and a C compiler (for Cython BLAS extensions). Installs PyTorch automatically.
 
-For GPU support, install [PyTorch with CUDA](https://pytorch.org/get-started/locally/) **before** installing batched-omp, or it will default to CPU-only PyTorch.
+For GPU support, install [PyTorch with CUDA](https://pytorch.org/get-started/locally/) **before** installing orthogonal-matching-pursuit-gpu, or it will default to CPU-only PyTorch.
 
 For development:
 ```bash
@@ -81,7 +81,7 @@ Swap one import and get automatic GPU acceleration — works with `Pipeline`, `G
 from sklearn.linear_model import OrthogonalMatchingPursuit
 omp = OrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
-# After (batched-omp, automatic GPU):
+# After (orthogonal-matching-pursuit-gpu, automatic GPU):
 from batched_omp import BatchedOrthogonalMatchingPursuit
 omp = BatchedOrthogonalMatchingPursuit(n_nonzero_coefs=10)
 

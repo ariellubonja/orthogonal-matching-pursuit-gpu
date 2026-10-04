@@ -1,4 +1,4 @@
-# batched-omp
+# orthogonal-matching-pursuit-gpu
 
 GPU-accelerated Batched Orthogonal Matching Pursuit (OMP) for Python.
 
@@ -30,7 +30,7 @@ sps = signals per second. GPU wins 142/147 sweep cells (96.6%) vs SPAMS. The 5 l
 ## Installation
 
 ```bash
-pip install batched-omp
+pip install orthogonal-matching-pursuit-gpu
 ```
 
 Installs PyTorch automatically. For GPU support, install PyTorch with CUDA first.
@@ -119,7 +119,7 @@ omp = BatchedOrthogonalMatchingPursuit(
 from sklearn.linear_model import OrthogonalMatchingPursuit
 omp = OrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
-# After (batched-omp, automatic GPU):
+# After (orthogonal-matching-pursuit-gpu, automatic GPU):
 from batched_omp import BatchedOrthogonalMatchingPursuit
 omp = BatchedOrthogonalMatchingPursuit(n_nonzero_coefs=10)
 
@@ -156,9 +156,9 @@ Updates the Cholesky inverse iteratively, avoiding a linear solve each iteration
 
 NumPy + Cython BLAS variant of v0. Calls dgemv/daxpy/idamax directly via scipy's cython_blas. Fastest on CPU when n_features is very large (e.g. 8064).
 
-## When to use batched-omp
+## When to use orthogonal-matching-pursuit-gpu
 
-- Have a GPU? Use batched-omp. 12-26x faster than SPAMS (C++) across all configs.
+- Have a GPU? Use orthogonal-matching-pursuit-gpu. 12-26x faster than SPAMS (C++) across all configs.
 - CPU only, want sklearn compatibility? 4-5x faster, same API, no C dependencies.
 - CPU only, maximum speed? SPAMS is faster (C++ with OpenMP) but harder to install and requires Python <=3.11.
 - Few signals or small problems? sklearn is fine — batching helps most with hundreds+ of signals.
